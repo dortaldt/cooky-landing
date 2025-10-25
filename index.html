@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooky - Organize Your Recipes, Understand Your Food</title>
+    <meta name="description" content="Stop losing recipes in bookmarks. Organize all your recipes in one place and track nutrition automatically. Know exactly what's in your food.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #F8FF20;
+            --green-light: #67FF97;
+            --green-dark: #27B654;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B6B6B;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: var(--yellow);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: var(--green-light);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .hero-content {
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 7rem;
+            font-weight: 950;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease-out;
+            line-height: 1.05;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero h1 .logo-mark {
+            display: block;
+            width: 70px;
+            height: 70px;
+        }
+
+        .hero .tagline {
+            font-size: 2.75rem;
+            font-weight: 850;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            letter-spacing: -0.03em;
+        }
+
+        .hero .description {
+            font-size: 1.4rem;
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            color: var(--text-gray);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            letter-spacing: -0.01em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+            color: var(--text-dark);
+            box-shadow: 0 8px 24px rgba(39, 182, 84, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(39, 182, 84, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-ios {
+            background: var(--text-dark);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-ios:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+            background: #000000;
+        }
+
+        .platform-note {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .trust-badge {
+            padding: 0.6rem 1.2rem;
+            background: rgba(103, 255, 151, 0.15);
+            border: 2px solid var(--green-light);
+            border-radius: 24px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        /* App Preview Section */
+        .app-preview {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-preview::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .showcase-grid {
+            margin-top: 6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10rem;
+        }
+
+        .showcase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .showcase-item.reverse {
+            direction: rtl;
+        }
+
+        .showcase-item.reverse > * {
+            direction: ltr;
+        }
+
+        .showcase-content {
+            max-width: 500px;
+        }
+
+        .showcase-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .showcase-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        .showcase-image,
+        .showcase-video {
+            position: relative;
+        }
+
+        .showcase-image img,
+        .demo-video-showcase {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 32px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .showcase-image img:hover,
+        .demo-video-showcase:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .showcase-item-full {
+            text-align: center;
+            padding: 4rem 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .showcase-content-center {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .showcase-image-large {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .showcase-image-large img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .showcase-image-large img:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .showcase-video-large {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .demo-video-large {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .demo-video-large:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+
+        .preview-cta {
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .btn-preview {
+            padding: 1.2rem 3rem;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-preview:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: var(--yellow);
+            opacity: 0.08;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 4.5rem;
+            font-weight: 950;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.04em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 2px solid #F0F0F0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--yellow), var(--green-light), var(--green-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--green-light);
+            box-shadow: 0 16px 48px rgba(39, 182, 84, 0.12);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+
+        .feature-card h3 {
+            font-size: 1.85rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 8rem 0;
+            background: #FAFAFA;
+            position: relative;
+        }
+
+        .how-it-works::after {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            right: 8%;
+            width: 250px;
+            height: 250px;
+            background: var(--green-dark);
+            opacity: 0.06;
+            border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--yellow), var(--green-light));
+            color: var(--text-dark);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 24px rgba(103, 255, 151, 0.25);
+        }
+
+        .step h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .step p {
+            color: var(--text-gray);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-light));
+            color: var(--text-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: var(--yellow);
+            opacity: 0.15;
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .stat-label {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 0;
+            background: var(--white);
+            color: var(--text-dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--yellow) 0%, transparent 70%);
+            opacity: 0.08;
+        }
+
+        .cta-section h2 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 950;
+            letter-spacing: -0.04em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0 2rem;
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-content h3 {
+            font-size: 2rem;
+            font-weight: 950;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.05rem;
+        }
+
+        .footer-download {
+            margin-bottom: 3rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-download-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-footer-primary {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+            color: var(--text-dark);
+        }
+
+        .btn-footer-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(103, 255, 151, 0.3);
+        }
+
+        .btn-footer-ios {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--white);
+        }
+
+        .btn-footer-ios:hover {
+            transform: translateY(-2px);
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--green-light);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .hero-content {
+                padding: 4rem 0;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+                line-height: 1.15;
+            }
+
+            .hero h1 .logo-mark {
+                width: 50px;
+                height: 50px;
+            }
+
+            .hero .tagline {
+                font-size: 1.6rem;
+            }
+
+            .hero .description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 100%;
+                font-size: 1.05rem;
+                padding: 1rem 2rem;
+            }
+
+            .features {
+                padding: 5rem 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .feature-card p {
+                font-size: 1rem;
+            }
+
+            .how-it-works {
+                padding: 5rem 0;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats {
+                padding: 4rem 0;
+            }
+
+            .stats-grid {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .stat-label {
+                font-size: 1rem;
+            }
+
+            .cta-section {
+                padding: 5rem 0;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .cta-section p {
+                font-size: 1.2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero::before {
+                width: 250px;
+                height: 250px;
+                top: -5%;
+                right: -20%;
+            }
+
+            .hero::after {
+                width: 200px;
+                height: 200px;
+                bottom: -10%;
+                left: -15%;
+            }
+
+            .platform-note {
+                font-size: 0.9rem;
+                margin-top: 1rem;
+            }
+
+            .trust-badges {
+                gap: 0.8rem;
+                margin: 1.5rem 0 2rem;
+            }
+
+            .trust-badge {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .app-preview {
+                padding: 5rem 0;
+            }
+
+            .showcase-grid {
+                gap: 5rem;
+                margin-top: 4rem;
+            }
+
+            .showcase-item,
+            .showcase-item.reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                direction: ltr;
+            }
+
+            .showcase-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .showcase-title {
+                font-size: 1.8rem;
+            }
+
+            .showcase-description {
+                font-size: 1.05rem;
+            }
+
+            .showcase-image,
+            .showcase-video {
+                text-align: center;
+            }
+
+            .showcase-image img,
+            .demo-video-showcase {
+                max-width: 280px;
+            }
+
+            .showcase-content-center {
+                padding: 0 1rem;
+            }
+
+            .showcase-image-large,
+            .showcase-video-large {
+                max-width: 100%;
+            }
+
+            .demo-video-large {
+                border-radius: 16px;
+            }
+
+            .preview-cta {
+                margin-top: 4rem;
+            }
+
+            .btn-preview {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .footer-cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-footer-primary,
+            .btn-footer-ios {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 .logo-mark {
+                width: 40px;
+                height: 40px;
+            }
+
+            .hero .tagline {
+                font-size: 1.35rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .showcase-title {
+                font-size: 1.5rem;
+            }
+
+            .showcase-description {
+                font-size: 1rem;
+            }
+
+            .showcase-image img,
+            .demo-video-showcase {
+                max-width: 240px;
+            }
+        }
+
+        /* Desktop Enhancements */
+        @media (min-width: 1200px) {
+            .showcase-grid {
+                gap: 10rem;
+            }
+
+            .showcase-item {
+                gap: 8rem;
+            }
+
+            .showcase-title {
+                font-size: 3rem;
+            }
+
+            .showcase-description {
+                font-size: 1.35rem;
+            }
+
+            .showcase-image img,
+            .demo-video-showcase {
+                max-width: 400px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><img src="landing_assets/icon_no_bg.png" alt="Cooky" class="logo-mark">Cooky</h1>
+                <p class="tagline">Your Recipes. Organized. Healthy.</p>
+                <p class="description">
+                    Stop losing recipes in bookmarks and screenshots. Keep all your favorite recipes in one place, 
+                    understand what's really in your food, and make healthier choices with automatic nutrition tracking.
+                </p>
+                <div class="trust-badges">
+                    <span class="trust-badge">✓ 100% Free</span>
+                    <span class="trust-badge">✓ No Credit Card</span>
+                    <span class="trust-badge">✓ iOS & Web</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-primary">Try Web App →</a>
+                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                </div>
+                <p class="platform-note">Available now on web and iOS • No credit card required</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section class="app-preview">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">See Cooky in Action</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">From chaos to clarity in seconds</p>
+            
+            <!-- Feature Showcase Items -->
+            <div class="showcase-grid">
+                <!-- Item 1: Recipe Library -->
+                <div class="showcase-item">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Your Recipe Collection</h3>
+                        <p class="showcase-description">
+                            All your recipes beautifully organized in one place. 
+                            No more scattered bookmarks or lost screenshots. 
+                            Search, sort, and find any recipe in seconds.
+                        </p>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="landing_assets/iphone-library-main.png" alt="Recipe Library" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Item 2: Nutrition Details -->
+                <div class="showcase-item reverse">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Know What You're Eating</h3>
+                        <p class="showcase-description">
+                            Complete nutrition breakdown for every recipe. 
+                            See calories, macros, and which ingredients contribute most. 
+                            Make informed choices about your meals.
+                        </p>
+                    </div>
+                    <div class="showcase-video">
+                        <video 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline 
+                            poster="landing_assets/iphne-nutrition.png"
+                            class="demo-video-showcase"
+                        >
+                            <source src="landing_assets/nutrition_and_units.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Item 3: Unit Conversion -->
+                <div class="showcase-item">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Convert Units Instantly</h3>
+                        <p class="showcase-description">
+                            Switch between metric and imperial with a tap. 
+                            Smart conversions understand ingredient densities. 
+                            Cook with recipes from anywhere in the world.
+                        </p>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="landing_assets/change_units.png" alt="Unit Conversion" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Item 4: Recipe Versions -->
+                <div class="showcase-item reverse">
+                    <div class="showcase-content">
+                        <h3 class="showcase-title">Create Multiple Versions</h3>
+                        <p class="showcase-description">
+                            Save high-protein, low-calorie, or low-fat versions of your favorite recipes. 
+                            Compare nutrition side-by-side and choose what fits your goals. 
+                            Never lose your original recipe.
+                        </p>
+                    </div>
+                    <div class="showcase-image">
+                        <img src="landing_assets/iphone-versions.png" alt="Recipe Versions" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Item 5: iPad Experience -->
+                <div class="showcase-item-full">
+                    <div class="showcase-content-center">
+                        <h3 class="showcase-title">Perfect for Cooking on iPad</h3>
+                        <p class="showcase-description">
+                            Side-by-side layout shows ingredients and instructions together. 
+                            No more scrolling while you cook. Set your iPad on the counter and see everything at once.
+                        </p>
+                    </div>
+                    <div class="showcase-video-large">
+                        <video 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline 
+                            poster="landing_assets/ipad-side-by-side.png"
+                            class="demo-video-large"
+                        >
+                            <source src="landing_assets/ipad-side-side-new.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-cta">
+                <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-preview">Get Organized Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">End Recipe Chaos. Start Eating Better.</h2>
+            <p class="section-subtitle">Everything you need to organize your recipes and understand your food</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Know What You're Eating</h3>
+                    <p>Every recipe automatically shows detailed nutrition information—calories, protein, carbs, fats, and more. Make informed decisions about your meals.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Never Lose a Recipe</h3>
+                    <p>Import from any website, snap a photo of handwritten recipes, or paste from anywhere. All your recipes in one organized place.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Cook with Confidence</h3>
+                    <p>Adjust servings instantly and watch all ingredients scale perfectly. See nutrition update in real-time as you modify recipes.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Track Your Health Goals</h3>
+                    <p>See which ingredients contribute most to calories and macros. Make smarter substitutions to hit your nutritional targets.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Access Anywhere</h3>
+                    <p>Your recipes sync across all your devices—iPhone, iPad, and web. Start on your phone, finish on your tablet.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Cook in Any Language</h3>
+                    <p>Import recipes in multiple languages and get automatic translations. Perfect for exploring international cuisines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">From scattered recipes to organized cooking in minutes</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Gather Your Recipes</h3>
+                    <p>Import from websites, capture photos of recipe cards, or paste from anywhere. No more lost bookmarks or screenshots.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>See What's Really Inside</h3>
+                    <p>Instantly view complete nutrition info for every recipe. Know exactly what you're eating and feeding your family.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Cook Healthier</h3>
+                    <p>Adjust servings, track your macros, and make informed choices. Keep all your favorite recipes organized and accessible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--text-dark); margin-bottom: 1rem;">Why Choose Cooky?</h2>
+            <p style="text-align: center; color: var(--text-dark); font-size: 1.2rem; margin-bottom: 3rem; font-weight: 500;">Take control of your recipes and your health</p>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free Forever</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Auto</span>
+                    <span class="stat-label">Nutrition Tracking</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Unlimited Recipes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">iOS</span>
+                    <span class="stat-label">& Web Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Take Control of Your Kitchen</h2>
+            <p>Join thousands who've organized their recipes and started eating healthier. Free forever, no credit card required.</p>
+            <div class="cta-buttons">
+                <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-primary">Try Web App →</a>
+                <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    Download for iOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Cooky</h3>
+                <p>Organize Your Recipes. Understand Your Food.</p>
+            </div>
+            <div class="footer-download">
+                <p class="footer-download-title">Get Started Today</p>
+                <div class="footer-cta-buttons">
+                    <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-footer-primary">Try Web App</a>
+                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-footer-ios">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                        </svg>
+                        iOS App
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:dortaldt@gmail.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 Dor Tal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
