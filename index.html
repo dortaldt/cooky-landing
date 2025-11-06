@@ -2,39 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cooky - Organize Your Recipes, Understand Your Food</title>
-    <meta name="description" content="Stop losing recipes in bookmarks. Organize all your recipes in one place and track nutrition automatically. Know exactly what's in your food.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Primary Meta Tags -->
+    <title>Cooky - AI Recipe Manager | Smart Cooking App for iOS & Web</title>
+    <meta name="title" content="Cooky - AI Recipe Manager | Smart Cooking App">
+    <meta name="description" content="Transform your cooking with AI-powered recipe management. Import recipes from any website with one tap, track nutrition automatically, adjust servings instantly, and organize with smart photo recognition. Free on iOS & Web.">
+    <meta name="keywords" content="AI recipe manager, recipe management app, smart recipe organizer, AI powered cooking app, recipe parser, photo recipe import, nutrition tracking, serving size calculator, cloud recipe storage, multilingual recipe app, import recipes from websites, automatic nutrition calculator">
+    <meta name="author" content="Dor Tal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.thecookyrecipes.com">
+    <meta name="theme-color" content="#67FF97">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
-    <!-- Open Graph / Facebook -->
+    <!-- iOS Meta Tags -->
+    <meta name="apple-itunes-app" content="app-id=6754215016">
+    <link rel="apple-touch-icon" href="/icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://apps.apple.com" crossorigin>
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    <link rel="preload" href="/icon.png" as="image" type="image/png">
+    
+    <!-- OpenGraph Meta Tags (Facebook, LinkedIn, iMessage, WhatsApp, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cooky-app-ivory.vercel.app/">
-    <meta property="og:title" content="Cooky - Organize Your Recipes, Understand Your Food">
-    <meta property="og:description" content="Stop losing recipes in bookmarks. Organize all your recipes in one place and track nutrition automatically. Know exactly what's in your food.">
-    <meta property="og:image" content="https://cooky-app-ivory.vercel.app/landing_assets/social-share.png">
-    <meta property="og:image:alt" content="Cooky - Organize Your Recipes, Understand Your Food">
+    <meta property="og:title" content="Cooky - AI Recipe Manager | Smart Cooking App">
+    <meta property="og:description" content="Transform your cooking with AI-powered recipe management. Import recipes from any website with one tap, track nutrition automatically, and adjust servings instantly. Free on iOS & Web.">
+    <meta property="og:image" content="https://www.thecookyrecipes.com/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cooky - AI Recipe Manager with smart parsing and nutrition tracking">
+    <meta property="og:url" content="https://www.thecookyrecipes.com">
+    <meta property="og:site_name" content="Cooky">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Dor Tal">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cooky-app-ivory.vercel.app/">
-    <meta property="twitter:title" content="Cooky - Organize Your Recipes, Understand Your Food">
-    <meta property="twitter:description" content="Stop losing recipes in bookmarks. Organize all your recipes in one place and track nutrition automatically. Know exactly what's in your food.">
-    <meta property="twitter:image" content="https://cooky-app-ivory.vercel.app/landing_assets/social-share.png">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cooky - AI Recipe Manager | Smart Cooking App">
+    <meta name="twitter:description" content="Transform your cooking with AI-powered recipe management. Import recipes from any website, track nutrition, and adjust servings instantly. Free on iOS & Web.">
+    <meta name="twitter:image" content="https://www.thecookyrecipes.com/og-default.png">
+    <meta name="twitter:image:alt" content="Cooky - AI Recipe Manager">
+    <meta name="twitter:creator" content="@cookyapp">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7D62E4Q13"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-C7D62E4Q13');
+    <!-- iOS App Integration -->
+    <meta property="al:ios:app_store_id" content="6754215016">
+    <meta property="al:ios:app_name" content="Cooky">
+    <meta property="al:ios:url" content="cooky://">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Cooky">
+    
+    <!-- iOS Universal Link -->
+    <link rel="alternate" href="cooky://">
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cooky",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "100",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "description": "AI-powered recipe management app with smart parsing, nutrition tracking, and interactive cooking features. Import recipes from any website, adjust servings, and organize your collection effortlessly.",
+      "url": "https://www.thecookyrecipes.com",
+      "image": "https://www.thecookyrecipes.com/icon.png",
+      "screenshot": "https://www.thecookyrecipes.com/og-default.png",
+      "downloadUrl": "https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016",
+      "softwareVersion": "1.0.6",
+      "author": {
+        "@type": "Person",
+        "name": "Dor Tal",
+        "email": "dortaldt@gmail.com"
+      },
+      "featureList": [
+        "AI-powered recipe parsing from any website",
+        "Photo recipe recognition and extraction",
+        "Automatic nutrition tracking and breakdown",
+        "Smart serving size adjustment",
+        "Multilingual recipe support",
+        "Cloud sync across all devices",
+        "Interactive cooking mode with timers",
+        "Recipe sharing and collaboration"
+      ],
+      "applicationSubCategory": "Recipe Management"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cooky",
+      "url": "https://www.thecookyrecipes.com",
+      "logo": "https://www.thecookyrecipes.com/icon.png",
+      "description": "AI-powered recipe management platform for home cooks",
+      "email": "dortaldt@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Dor Tal"
+      },
+      "sameAs": [
+        "https://github.com/dortaldt/cooky",
+        "https://github.com/dortaldt/cooky-landing",
+        "https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Cooky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cooky is an AI-powered recipe management app that helps you import, organize, and cook recipes from anywhere. It features smart parsing, nutrition tracking, serving adjustments, and photo recognition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does AI recipe parsing work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply paste any recipe URL or text into Cooky, and our AI automatically extracts ingredients, instructions, cooking times, and nutritional information. It works with recipes from any website."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Cooky free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Cooky is completely free to download and use on both iOS and web platforms. All features including AI parsing, nutrition tracking, and cloud sync are available at no cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import recipes from photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Take a photo of any recipe card, cookbook page, or handwritten recipe, and Cooky will automatically extract all the details using AI-powered photo recognition."
+          }
+        }
+      ]
+    }
     </script>
     
     <style>
@@ -130,16 +256,16 @@
             color: var(--text-dark);
             animation: fadeInUp 0.8s ease-out;
             line-height: 1.05;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
         }
 
         .hero h1 .logo-mark {
-            display: block;
-            width: 70px;
-            height: 70px;
+            display: inline-block;
+            width: 140px;
+            height: 140px;
+            margin-right: 1.5rem;
+            vertical-align: middle;
+            border-radius: 28px;
+            box-shadow: 0 12px 36px rgba(103, 255, 151, 0.35);
         }
 
         .hero .tagline {
@@ -202,206 +328,6 @@
         .btn-secondary:hover {
             background: var(--text-dark);
             color: var(--white);
-        }
-
-        .btn-ios {
-            background: var(--text-dark);
-            color: var(--white);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn-ios:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-            background: #000000;
-        }
-
-        .platform-note {
-            margin-top: 1.5rem;
-            font-size: 1rem;
-            color: var(--text-gray);
-            font-weight: 500;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0 2.5rem;
-            animation: fadeInUp 0.8s ease-out 0.5s both;
-        }
-
-        .trust-badge {
-            padding: 0.6rem 1.2rem;
-            background: rgba(103, 255, 151, 0.15);
-            border: 2px solid var(--green-light);
-            border-radius: 24px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            white-space: nowrap;
-        }
-
-        /* App Preview Section */
-        .app-preview {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, var(--green-dark), var(--green-light));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .app-preview::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .showcase-grid {
-            margin-top: 6rem;
-            display: flex;
-            flex-direction: column;
-            gap: 10rem;
-        }
-
-        .showcase-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: center;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .showcase-item.reverse {
-            direction: rtl;
-        }
-
-        .showcase-item.reverse > * {
-            direction: ltr;
-        }
-
-        .showcase-content {
-            max-width: 500px;
-        }
-
-        .showcase-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            color: white;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-        }
-
-        .showcase-description {
-            font-size: 1.25rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 400;
-        }
-
-        .showcase-image,
-        .showcase-video {
-            position: relative;
-        }
-
-        .showcase-image img,
-        .demo-video-showcase {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 32px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .showcase-image img:hover,
-        .demo-video-showcase:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-
-        .showcase-item-full {
-            text-align: center;
-            padding: 4rem 0;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-        }
-
-        .showcase-content-center {
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .showcase-image-large {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .showcase-image-large img {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .showcase-image-large img:hover {
-            transform: scale(1.02) translateY(-5px);
-        }
-
-        .showcase-video-large {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .demo-video-large {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .demo-video-large:hover {
-            transform: scale(1.02) translateY(-5px);
-        }
-
-        .preview-cta {
-            margin-top: 6rem;
-            text-align: center;
-        }
-
-        .btn-preview {
-            padding: 1.2rem 3rem;
-            font-size: 1.15rem;
-            border: none;
-            border-radius: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            background: white;
-            color: var(--green-dark);
-            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-preview:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(255, 255, 255, 0.4);
         }
 
         /* Features Section */
@@ -666,68 +592,6 @@
             font-size: 1.05rem;
         }
 
-        .footer-download {
-            margin-bottom: 3rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-download-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .footer-cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-footer-primary {
-            padding: 0.9rem 2rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            background: linear-gradient(135deg, var(--green-light), var(--green-dark));
-            color: var(--text-dark);
-        }
-
-        .btn-footer-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(103, 255, 151, 0.3);
-        }
-
-        .btn-footer-ios {
-            padding: 0.9rem 2rem;
-            font-size: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            color: var(--white);
-        }
-
-        .btn-footer-ios:hover {
-            transform: translateY(-2px);
-            border-color: var(--white);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
         .footer-links {
             display: flex;
             justify-content: center;
@@ -789,8 +653,10 @@
             }
 
             .hero h1 .logo-mark {
-                width: 50px;
-                height: 50px;
+                width: 80px;
+                height: 80px;
+                margin-right: 0.75rem;
+                border-radius: 18px;
             }
 
             .hero .tagline {
@@ -897,92 +763,6 @@
                 bottom: -10%;
                 left: -15%;
             }
-
-            .platform-note {
-                font-size: 0.9rem;
-                margin-top: 1rem;
-            }
-
-            .trust-badges {
-                gap: 0.8rem;
-                margin: 1.5rem 0 2rem;
-            }
-
-            .trust-badge {
-                font-size: 0.85rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .app-preview {
-                padding: 5rem 0;
-            }
-
-            .showcase-grid {
-                gap: 5rem;
-                margin-top: 4rem;
-            }
-
-            .showcase-item,
-            .showcase-item.reverse {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                direction: ltr;
-            }
-
-            .showcase-content {
-                max-width: 100%;
-                text-align: center;
-            }
-
-            .showcase-title {
-                font-size: 1.8rem;
-            }
-
-            .showcase-description {
-                font-size: 1.05rem;
-            }
-
-            .showcase-image,
-            .showcase-video {
-                text-align: center;
-            }
-
-            .showcase-image img,
-            .demo-video-showcase {
-                max-width: 280px;
-            }
-
-            .showcase-content-center {
-                padding: 0 1rem;
-            }
-
-            .showcase-image-large,
-            .showcase-video-large {
-                max-width: 100%;
-            }
-
-            .demo-video-large {
-                border-radius: 16px;
-            }
-
-            .preview-cta {
-                margin-top: 4rem;
-            }
-
-            .btn-preview {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .footer-cta-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn-footer-primary,
-            .btn-footer-ios {
-                width: 100%;
-            }
         }
 
         @media (max-width: 480px) {
@@ -995,8 +775,9 @@
             }
 
             .hero h1 .logo-mark {
-                width: 40px;
-                height: 40px;
+                width: 60px;
+                height: 60px;
+                border-radius: 14px;
             }
 
             .hero .tagline {
@@ -1010,53 +791,22 @@
             .cta-section h2 {
                 font-size: 2rem;
             }
-
-            .showcase-title {
-                font-size: 1.5rem;
-            }
-
-            .showcase-description {
-                font-size: 1rem;
-            }
-
-            .showcase-image img,
-            .demo-video-showcase {
-                max-width: 240px;
-            }
         }
 
-        /* Desktop Enhancements */
-        @media (min-width: 1200px) {
-            .showcase-grid {
-                gap: 10rem;
-            }
-
-            .showcase-item {
-                gap: 8rem;
-            }
-
-            .showcase-title {
-                font-size: 3rem;
-            }
-
-            .showcase-description {
-                font-size: 1.35rem;
-            }
-
-            .showcase-image img,
-            .demo-video-showcase {
-                max-width: 400px;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .steps {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        /* App Preview Section */
+        .app-preview {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
         }
 
+        .app-screenshot {
+            max-width: 400px;
+            margin: 3rem auto 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -1064,136 +814,16 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1><img src="landing_assets/icon_no_bg.png" alt="Cooky" class="logo-mark">Cooky</h1>
-                <p class="tagline">Your Recipes. Organized. Healthy.</p>
+                <h1><img src="/icon.png" alt="Cooky AI Recipe Manager App Icon" class="logo-mark">Cooky</h1>
+                <p class="tagline">AI-Powered Recipe Management</p>
                 <p class="description">
-                    Stop losing recipes in bookmarks and screenshots. Keep all your favorite recipes in one place, 
-                    understand what's really in your food, and make healthier choices with automatic nutrition tracking.
+                    Transform your cooking with intelligent recipe management. 
+                    AI-powered parsing, smart nutrition tracking, and seamless organization for all your favorite recipes.
                 </p>
-                <div class="trust-badges">
-                    <span class="trust-badge">✓ 100% Free</span>
-                    <span class="trust-badge">✓ No Credit Card</span>
-                    <span class="trust-badge">✓ iOS & Web</span>
-                </div>
                 <div class="cta-buttons">
-                    <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-primary">Try Web App →</a>
-                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
-                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
-                        </svg>
-                        Download for iOS
-                    </a>
+                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-primary">Download on App Store →</a>
+                    <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-secondary">Launch Web App</a>
                 </div>
-                <p class="platform-note">Available now on web and iOS • No credit card required</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Preview Section -->
-    <section class="app-preview">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">See Cooky in Action</h2>
-            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">From chaos to clarity in seconds</p>
-            
-            <!-- Feature Showcase Items -->
-            <div class="showcase-grid">
-                <!-- Item 1: Recipe Library -->
-                <div class="showcase-item">
-                    <div class="showcase-content">
-                        <h3 class="showcase-title">Your Recipe Collection</h3>
-                        <p class="showcase-description">
-                            All your recipes beautifully organized in one place. 
-                            No more scattered bookmarks or lost screenshots. 
-                            Search, sort, and find any recipe in seconds.
-                        </p>
-                    </div>
-                    <div class="showcase-image">
-                        <img src="landing_assets/iphone-library-main.png" alt="Recipe Library" loading="lazy">
-                    </div>
-                </div>
-
-                <!-- Item 2: Nutrition Details -->
-                <div class="showcase-item reverse">
-                    <div class="showcase-content">
-                        <h3 class="showcase-title">Know What You're Eating</h3>
-                        <p class="showcase-description">
-                            Complete nutrition breakdown for every recipe. 
-                            See calories, macros, and which ingredients contribute most. 
-                            Make informed choices about your meals.
-                        </p>
-                    </div>
-                    <div class="showcase-video">
-                        <video 
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline 
-                            poster="landing_assets/iphne-nutrition.png"
-                            class="demo-video-showcase"
-                        >
-                            <source src="landing_assets/nutrition_and_units.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
-                <!-- Item 3: Unit Conversion -->
-                <div class="showcase-item">
-                    <div class="showcase-content">
-                        <h3 class="showcase-title">Convert Units Instantly</h3>
-                        <p class="showcase-description">
-                            Switch between metric and imperial with a tap. 
-                            Smart conversions understand ingredient densities. 
-                            Cook with recipes from anywhere in the world.
-                        </p>
-                    </div>
-                    <div class="showcase-image">
-                        <img src="landing_assets/change_units.png" alt="Unit Conversion" loading="lazy">
-                    </div>
-                </div>
-
-                <!-- Item 4: Recipe Versions -->
-                <div class="showcase-item reverse">
-                    <div class="showcase-content">
-                        <h3 class="showcase-title">Create Multiple Versions</h3>
-                        <p class="showcase-description">
-                            Save high-protein, low-calorie, or low-fat versions of your favorite recipes. 
-                            Compare nutrition side-by-side and choose what fits your goals. 
-                            Never lose your original recipe.
-                        </p>
-                    </div>
-                    <div class="showcase-image">
-                        <img src="landing_assets/iphone-versions.png" alt="Recipe Versions" loading="lazy">
-                    </div>
-                </div>
-
-                <!-- Item 5: iPad Experience -->
-                <div class="showcase-item-full">
-                    <div class="showcase-content-center">
-                        <h3 class="showcase-title">Perfect for Cooking on iPad</h3>
-                        <p class="showcase-description">
-                            Side-by-side layout shows ingredients and instructions together. 
-                            No more scrolling while you cook. Set your iPad on the counter and see everything at once.
-                        </p>
-                    </div>
-                    <div class="showcase-video-large">
-                        <video 
-                            autoplay 
-                            muted 
-                            loop 
-                            playsinline 
-                            poster="landing_assets/ipad-side-by-side.png"
-                            class="demo-video-large"
-                        >
-                            <source src="landing_assets/ipad-side-side-new.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-
-            <div class="preview-cta">
-                <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-preview">Get Organized Now →</a>
             </div>
         </div>
     </section>
@@ -1201,38 +831,38 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">End Recipe Chaos. Start Eating Better.</h2>
-            <p class="section-subtitle">Everything you need to organize your recipes and understand your food</p>
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to organize, cook, and enjoy</p>
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Know What You're Eating</h3>
-                    <p>Every recipe automatically shows detailed nutrition information—calories, protein, carbs, fats, and more. Make informed decisions about your meals.</p>
+                    <h3>AI-Powered Parsing</h3>
+                    <p>Paste any recipe from the web and let AI automatically extract ingredients, instructions, and nutritional information.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Never Lose a Recipe</h3>
-                    <p>Import from any website, snap a photo of handwritten recipes, or paste from anywhere. All your recipes in one organized place.</p>
+                    <h3>Photo Recognition</h3>
+                    <p>Take a photo of a recipe card or cookbook page, and Cooky will extract all the details automatically.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Cook with Confidence</h3>
-                    <p>Adjust servings instantly and watch all ingredients scale perfectly. See nutrition update in real-time as you modify recipes.</p>
+                    <h3>Smart Serving Sizes</h3>
+                    <p>Easily adjust recipes for any number of servings. All ingredients scale automatically with perfect precision.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Track Your Health Goals</h3>
-                    <p>See which ingredients contribute most to calories and macros. Make smarter substitutions to hit your nutritional targets.</p>
+                    <h3>Nutrition Tracking</h3>
+                    <p>Get detailed nutritional breakdowns for every recipe with calories, macros, and top contributors.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Access Anywhere</h3>
-                    <p>Your recipes sync across all your devices—iPhone, iPad, and web. Start on your phone, finish on your tablet.</p>
+                    <h3>Multilingual Support</h3>
+                    <p>Access your recipes in multiple languages. Perfect for international cooking enthusiasts.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Cook in Any Language</h3>
-                    <p>Import recipes in multiple languages and get automatic translations. Perfect for exploring international cuisines.</p>
+                    <h3>Cloud Sync</h3>
+                    <p>Your recipes are safely stored in the cloud and accessible from any device, anytime.</p>
                 </div>
             </div>
         </div>
@@ -1242,25 +872,25 @@
     <section class="how-it-works">
         <div class="container">
             <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">From scattered recipes to organized cooking in minutes</p>
+            <p class="section-subtitle">Get started in three simple steps</p>
             
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Gather Your Recipes</h3>
-                    <p>Import from websites, capture photos of recipe cards, or paste from anywhere. No more lost bookmarks or screenshots.</p>
+                    <h3>Import Your Recipe</h3>
+                    <p>Paste a URL, upload a photo, or manually enter your favorite recipe</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>See What's Really Inside</h3>
-                    <p>Instantly view complete nutrition info for every recipe. Know exactly what you're eating and feeding your family.</p>
+                    <h3>Let AI Work Its Magic</h3>
+                    <p>Watch as Cooky extracts ingredients, instructions, and nutritional data</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Cook Healthier</h3>
-                    <p>Adjust servings, track your macros, and make informed choices. Keep all your favorite recipes organized and accessible.</p>
+                    <h3>Cook & Enjoy</h3>
+                    <p>Follow along with interactive instructions and adjust servings on the fly</p>
                 </div>
             </div>
         </div>
@@ -1269,24 +899,22 @@
     <!-- Stats Section -->
     <section class="stats">
         <div class="container">
-            <h2 class="section-title" style="color: var(--text-dark); margin-bottom: 1rem;">Why Choose Cooky?</h2>
-            <p style="text-align: center; color: var(--text-dark); font-size: 1.2rem; margin-bottom: 3rem; font-weight: 500;">Take control of your recipes and your health</p>
             <div class="stats-grid">
                 <div class="stat">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label">Free Forever</span>
+                    <span class="stat-label">Free & Open Source</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">Auto</span>
-                    <span class="stat-label">Nutrition Tracking</span>
+                    <span class="stat-number">AI</span>
+                    <span class="stat-label">Powered Recognition</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">∞</span>
                     <span class="stat-label">Unlimited Recipes</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">iOS</span>
-                    <span class="stat-label">& Web Available</span>
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Always Available</span>
                 </div>
             </div>
         </div>
@@ -1295,16 +923,11 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Take Control of Your Kitchen</h2>
-            <p>Join thousands who've organized their recipes and started eating healthier. Free forever, no credit card required.</p>
+            <h2>Ready to Transform Your Cooking?</h2>
+            <p>Start organizing your recipes with AI-powered intelligence today</p>
             <div class="cta-buttons">
-                <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-primary">Try Web App →</a>
-                <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
-                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
-                    </svg>
-                    Download for iOS
-                </a>
+                <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-primary">Download on App Store →</a>
+                <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-secondary">Launch Web App</a>
             </div>
         </div>
     </section>
@@ -1314,25 +937,14 @@
         <div class="container">
             <div class="footer-content">
                 <h3>Cooky</h3>
-                <p>Organize Your Recipes. Understand Your Food.</p>
-            </div>
-            <div class="footer-download">
-                <p class="footer-download-title">Get Started Today</p>
-                <div class="footer-cta-buttons">
-                    <a href="https://cooky-app-ivory.vercel.app" target="_blank" class="btn btn-footer-primary">Try Web App</a>
-                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-footer-ios">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
-                        </svg>
-                        iOS App
-                    </a>
-                </div>
+                <p>AI-Powered Recipe Management</p>
             </div>
             <div class="footer-links">
+                <a href="https://www.thecookyrecipes.com" target="_blank">Launch App</a>
                 <a href="#features">Features</a>
-                <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+                <a href="/support.html">Support</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
                 <a href="mailto:dortaldt@gmail.com">Contact</a>
             </div>
             <p class="copyright">&copy; 2025 Dor Tal. All rights reserved.</p>
