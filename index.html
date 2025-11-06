@@ -330,6 +330,49 @@
             color: var(--white);
         }
 
+        .btn-ios {
+            background: var(--text-dark);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-ios:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+            background: #000000;
+        }
+
+        .platform-note {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .trust-badge {
+            padding: 0.6rem 1.2rem;
+            background: rgba(103, 255, 151, 0.15);
+            border: 2px solid var(--green-light);
+            border-radius: 24px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
         /* Features Section */
         .features {
             padding: 8rem 0;
@@ -814,16 +857,27 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1><img src="/icon.png" alt="Cooky AI Recipe Manager App Icon" class="logo-mark">Cooky</h1>
-                <p class="tagline">AI-Powered Recipe Management</p>
+                <h1><img src="/landing_assets/icon_no_bg.png" alt="Cooky" class="logo-mark">Cooky</h1>
+                <p class="tagline">Your Recipes. Organized. Healthy.</p>
                 <p class="description">
-                    Transform your cooking with intelligent recipe management. 
-                    AI-powered parsing, smart nutrition tracking, and seamless organization for all your favorite recipes.
+                    Stop losing recipes in bookmarks and screenshots. Keep all your favorite recipes in one place, 
+                    understand what's really in your food, and make healthier choices with automatic nutrition tracking.
                 </p>
-                <div class="cta-buttons">
-                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-primary">Download on App Store →</a>
-                    <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-secondary">Launch Web App</a>
+                <div class="trust-badges">
+                    <span class="trust-badge">✓ 100% Free</span>
+                    <span class="trust-badge">✓ No Credit Card</span>
+                    <span class="trust-badge">✓ iOS & Web</span>
                 </div>
+                <div class="cta-buttons">
+                    <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-primary">Try Web App →</a>
+                    <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                </div>
+                <p class="platform-note">Available now on web and iOS • No credit card required</p>
             </div>
         </div>
     </section>
@@ -926,8 +980,13 @@
             <h2>Ready to Transform Your Cooking?</h2>
             <p>Start organizing your recipes with AI-powered intelligence today</p>
             <div class="cta-buttons">
-                <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-primary">Download on App Store →</a>
-                <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-secondary">Launch Web App</a>
+                <a href="https://www.thecookyrecipes.com" target="_blank" class="btn btn-primary">Try Web App →</a>
+                <a href="https://apps.apple.com/il/app/cooky-your-recipe-enhancer/id6754215016" target="_blank" class="btn btn-ios">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 8px;">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5M13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    Download for iOS
+                </a>
             </div>
         </div>
     </section>
